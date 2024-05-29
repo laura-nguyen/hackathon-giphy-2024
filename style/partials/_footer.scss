@@ -1,0 +1,136 @@
+@use './mixins' as *;
+@use './fonts' as *;
+
+.footer {
+    background-color: black;
+    text-align: left;
+
+  
+    &-wrapper {
+      color: white;
+      padding: 1rem;
+      @include font-style(.8125rem);
+      @include flex-layout(flex, flex-start, flex-start);
+      flex-direction: column;
+
+  
+      @include tablet {
+        padding: 2.25rem;
+        @include font-style(.875rem);
+      }
+  
+      @include desktop {
+        @include spacing(0 auto, 2.25rem 5rem);
+        max-width: 1280px;
+      }
+    }
+  
+    &__top {
+      @include tablet {
+        width: 100%;
+        @include flex-layout(row, space-between, baseline);
+        flex-wrap: nowrap;
+      }
+  
+      &-wrapper {
+        @include tablet {
+          @include flex-layout(flex, space-between, baseline);
+          gap: 2.3rem;
+        }
+      }
+    }
+  
+    &__header {
+      @include font-style(1.5rem, 600);
+      padding-top: 1rem;
+  
+      @include tablet {
+        @include font-style(2.25rem, 600);
+      }
+    }
+  
+    &__content {
+      @include flex-layout(flex, flex-start, flex-start);
+      flex-direction: column;
+  
+      @include tablet {
+        flex-direction: row;
+        gap: 3.4rem;
+      }
+  
+      &-item {
+        padding: 0.5rem 0;
+      }
+
+  // style="width:100%;height:0;padding-bottom:74%;position:relative;"
+      &-title {
+        font-weight: 600;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            padding-bottom: 0.5rem;
+        }
+      }
+  
+      &-subtitle {
+        padding-bottom:m;
+        line-height: 1.25rem;
+  
+ 
+      }
+
+      &-gif {
+        //insert code 
+        height: 50px;
+        width: 50px;
+      }
+  
+    
+    }
+    
+  
+    &__logo {
+  
+      &-img {
+        padding: 1.5rem 0 1rem;
+        max-width: 10rem;
+  
+        @include tablet {
+          padding: 0;
+        }
+      }
+    }
+  
+    &__copyright {
+      font-size: .75rem;
+      padding-bottom: 1rem;
+  
+      @include tablet {
+        font-size: .875rem;
+        padding: 1.5rem 0;
+      }
+  
+      @include desktop {
+        padding: 1rem 0;
+      }
+    }
+  }
+
+
+iframe {
+  visibility: hidden;
+  height: 300px;
+  width: 200px;
+  // padding-left: 80px;
+  @include tablet {
+    visibility: visible;
+    height: 300px;
+    width: 300px;
+  }
+  @include desktop {
+    visibility: visible;
+    width: 500px;
+    height: 250px;
+    padding-left: 100px;
+  }
+}
